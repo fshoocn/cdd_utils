@@ -47,7 +47,7 @@ def setup_logging(debug: bool = False, log_file: str = "app.log"):
 
 def main():
     parser = argparse.ArgumentParser(description="CDD 解析工具")
-    parser.add_argument("cdd_file", nargs="?", default=r"Backend\testfile\1.cdd", help="CDD 文件路径")
+    parser.add_argument("cdd_file", nargs="?", default=r"Backend\testfile\GAC_A20_SBM.cdd", help="CDD 文件路径")
     parser.add_argument("--strict", action="store_true", default=True, help="是否开启严格模式")
     parser.add_argument("--debug", action="store_true", default=False, help="是否开启调试模式（显示详细堆栈）")
     
