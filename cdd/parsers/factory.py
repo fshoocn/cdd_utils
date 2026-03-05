@@ -11,9 +11,15 @@ from ..utils.exceptions import ParserNotFoundError, ParserExecutionError
 
 @logging
 class ParserFactory:
+    _instance = None
     # 类级缓存，避免重复扫描与重复实例化
     _parsers: Optional[List[BaseParser]] = None
-
+    
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+    
     def __init__(self):
         """初始化解析器工厂并加载解析器列表"""
         # 仅在首次实例化时发现解析器
