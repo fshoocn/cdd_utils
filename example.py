@@ -1,4 +1,4 @@
-﻿from cdd_v2 import loadfile 
+﻿from cdd import loadfile 
 from pathlib import Path
 
 def format_hex(data: bytes) -> str:

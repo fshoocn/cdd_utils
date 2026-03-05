@@ -21,12 +21,12 @@ from pathlib import Path
 logging.basicConfig(level=logging.WARNING)
 
 try:
-    from Backend.cdd_v2 import load_cdd
+    from Backend.cdd import load_cdd
 except ModuleNotFoundError:
     project_root = Path(__file__).resolve().parent.parent
     if str(project_root) not in sys.path:
         sys.path.insert(0, str(project_root))
-    from Backend.cdd_v2 import load_cdd
+    from Backend.cdd import load_cdd
 
 
 def normalize_hex_to_bytes(text: str) -> bytes:

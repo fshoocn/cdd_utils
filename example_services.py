@@ -20,28 +20,28 @@ logging.basicConfig(level=logging.WARNING)
 
 # ━━━ 兼容 import ━━━
 try:
-    from Backend.cdd_v2 import load_cdd
-    from Backend.cdd_v2.models.base import (
+    from Backend.cdd import load_cdd
+    from Backend.cdd.models.base import (
         CodedElement, IdentifiableElement, ByteOrder, Encoding, Quantity,
     )
-    from Backend.cdd_v2.models.elements import (
+    from Backend.cdd.models.elements import (
         ConstElement, TextTableElement, LinCompElement, PlaceholderElement,
     )
-    from Backend.cdd_v2.models.containers import (
+    from Backend.cdd.models.containers import (
         StructElement, MultiplexedElement, NumIterElement, DidElement,
     )
 except ModuleNotFoundError:
     project_root = Path(__file__).resolve().parent.parent
     if str(project_root) not in sys.path:
         sys.path.insert(0, str(project_root))
-    from Backend.cdd_v2 import load_cdd
-    from Backend.cdd_v2.models.base import (
+    from Backend.cdd import load_cdd
+    from Backend.cdd.models.base import (
         CodedElement, IdentifiableElement, ByteOrder, Encoding, Quantity,
     )
-    from Backend.cdd_v2.models.elements import (
+    from Backend.cdd.models.elements import (
         ConstElement, TextTableElement, LinCompElement, PlaceholderElement,
     )
-    from Backend.cdd_v2.models.containers import (
+    from Backend.cdd.models.containers import (
         StructElement, MultiplexedElement, NumIterElement, DidElement,
     )
 
